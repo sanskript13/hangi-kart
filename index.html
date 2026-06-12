@@ -176,7 +176,8 @@
 <script>
 (function() {
   var now = new Date();
-  var day = now.getDate();
+  var testDay = new URLSearchParams(location.search).get('day');
+  var day = testDay ? parseInt(testDay) : now.getDate();
   var month = now.getMonth();
   var year = now.getFullYear();
   var isEnpara = day >= 16 && day <= 25;
